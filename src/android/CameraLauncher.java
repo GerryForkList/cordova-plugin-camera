@@ -297,7 +297,7 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
 
         // Let's use the intent and see what happens
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
+        intent.putExtra("android.intent.extras.CAMERA_FACING", 1);
         // Specify file so that large image is captured and returned
         File photo = createCaptureFile(encodingType);
         this.imageUri = new CordovaUri(FileProvider.getUriForFile(cordova.getActivity(),
